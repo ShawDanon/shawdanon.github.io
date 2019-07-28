@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?887dce1cce44879d8dedd9d9ad97b6d9"></script>
+<!-- End Baidu Tongji -->
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>记一次项目重构 | 草庙村 | 个人博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="前端,笔记">
+    <meta name="description" content="代码惨不忍睹…">
+<meta name="keywords" content="前端,笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记一次项目重构">
+<meta property="og:url" content="https://shawdanon.github.io/2019/restructure/index.html">
+<meta property="og:site_name" content="草庙村">
+<meta property="og:description" content="代码惨不忍睹…">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-28T07:09:20.646Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="记一次项目重构">
+<meta name="twitter:description" content="代码惨不忍睹…">
+    
+        <link rel="alternate" type="application/atom+xml" title="草庙村" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.1">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">鬼厉</h5>
+          <a href="mailto:me@imtxp.cn" title="me@imtxp.cn" class="mail">me@imtxp.cn</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/nav"  >
+                <i class="icon icon-lg icon-folder"></i>
+                常用网址
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/time"  >
+                <i class="icon icon-lg icon-times"></i>
+                倒计时
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/ShawDanon" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">记一次项目重构</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">记一次项目重构</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-05-08T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2019年05月09日
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#背景"><span class="post-toc-number">1.</span> <span class="post-toc-text">背景</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#问题"><span class="post-toc-number">2.</span> <span class="post-toc-text">问题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目的"><span class="post-toc-number">3.</span> <span class="post-toc-text">目的</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#流程"><span class="post-toc-number">4.</span> <span class="post-toc-text">流程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解决方案"><span class="post-toc-number">5.</span> <span class="post-toc-text">解决方案</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-2019/restructure"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">记一次项目重构</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019年05月09日 00:00:00" datetime="2019-05-08T16:00:00.000Z"  itemprop="datePublished">2019年05月09日</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>代码惨不忍睹…</p>
+<a id="more"></a>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>1、一个临时赶出来的项目。<br>2、在都不熟悉 ant design pro 的情况下，甚至有的同学还不熟悉 react，大概经手 5 个同学一起写出来的项目。<br>3、没有做规划直接开始写代码。<br>4、为了方便快捷直接去除了 ant design pro 代码检查。</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>1、由于是并行开发，分工是按照模块来分的，导致前面几个模块和后面几个模块相同功能的组件会写成两份（最常见的是表格组件），当需求有修改的同时不方便统一做修改。<br>2、代码格式没有限制，风格各异，会出现一些莫名其妙的错误，阅读成本高。<br>3、没有约定全局样式、全局变量（版本号等）导致修改成本很高。<br>4、权限设计过于简单，只适用于菜单。<br>5、Tab 切换设计错误，导致从列表页到详情页后返回不能是刚才的 tab。（这里应该设计成路由）<br>6、组件中夹杂着数据处理，逻辑不明确，导致修改成本高。</p>
+<h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><p>1、解决项目代码格式不规范问题。（需要 eslint、stylelint 工具规范检查、git 提交前验证）<br>2、解决项目组件使用不统一问题。（同一功能组件存在两个人写的）<br>3、解决权限管理问题（目前是菜单权限，需要控制到按钮权限）<br>4、解决埋点问题<br>5、优化：使用 ts 来写，利用 d.ts 来优化开发体验，提示语等。<br>6、解决 tab 路由问题<br>7、解决 ui 组件和逻辑分离问题 1、解决项目代码格式不规范问题。（需要 eslint、stylelint 工具规范检查、git 提交前验证）<br>2、解决项目组件使用不统一问题。（同一功能组件存在两个人写的）<br>3、解决权限管理问题（目前是菜单权限，需要控制到按钮权限）<br>4、解决埋点问题<br>5、优化：使用 ts 来写，利用 d.ts 来优化开发体验，提示语等。<br>6、解决 tab 路由问题<br>7、解决 ui 组件和逻辑分离问题</p>
+<h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><p>1、搭项目：基于 umi，使用 eslint、stylelint、tslint 检查，pretter 格式化，使用 ts 开发，支持 mock 数据</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2>
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-07-28T07:09:20.646Z" itemprop="dateUpdated">2019年07月28日 15:09:20</time>
+</span><br>
+
+
+        
+        原文链接：<a href="/2019/restructure/" target="_blank" rel="external">https://shawdanon.github.io/2019/restructure/</a>
+        
+    </div>
+    <footer>
+        <a href="https://shawdanon.github.io">
+            <img src="/img/avatar.jpg" alt="鬼厉">
+            鬼厉
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://shawdanon.github.io/2019/restructure/&title=《记一次项目重构》 — 草庙村&pic=https://shawdanon.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shawdanon.github.io/2019/restructure/&title=《记一次项目重构》 — 草庙村&source=代码惨不忍睹…" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://shawdanon.github.io/2019/restructure/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《记一次项目重构》 — 草庙村&url=https://shawdanon.github.io/2019/restructure/&via=https://shawdanon.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://shawdanon.github.io/2019/restructure/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/umi-script/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">关于umi的半自动化脚本</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/react-native/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">reactNative</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        赞助
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>鬼厉 &copy; 2016 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://shawdanon.github.io/2019/restructure/&title=《记一次项目重构》 — 草庙村&pic=https://shawdanon.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shawdanon.github.io/2019/restructure/&title=《记一次项目重构》 — 草庙村&source=代码惨不忍睹…" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://shawdanon.github.io/2019/restructure/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《记一次项目重构》 — 草庙村&url=https://shawdanon.github.io/2019/restructure/&via=https://shawdanon.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://shawdanon.github.io/2019/restructure/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKElEQVR42u3aQW6EMBAEwP3/p8k1qwjUbUMk7PIJsRBcPkzsmfl84nH8Gsmvx5/RvvV5YmBgYLyWcVyOZFrJW8mTZ9fXc8PAwNiHcRbBrq/z6ebB9/pbp/cxMDAwgg1cG3Cv72BgYGDMMK5Pke0x+PoOBgYGRnuIvevAmbz14FkcAwPjhYw86/7/14/UNzAwMF7FOMqRbNfy52dm8vUVDAyMpRljn2nLlu1hdWw+GBgYuzHmN3BJ2J1Zgijbh4GBsQSj2HgFW8CxkD1W2vy6g4GBsQGjLRbmyDw25i0dRS4QAwNjIUaeJhtr50omlC9WUYPFwMBYjvHEBi5vnmiTehgYGLsx7jqazpQ2Z4oTGBgYazPmu6ruemasdIGBgbEnI385b7yY2RQWwR0DA2NRRptQa0Nh+xfa4gQGBsaejLEjZXKIbdnFEmNgYCzNGEv9J9T5wJ0n+zAwMHZgzCTxx4oB+QE4b8LAwMDYmdE2UowtzQ3NYRgYGEsz2gTZWKI/aZtoy5xRJRYDA2MhRl7zbENnuyj5RhADA2NnxlhBcT7g3pBiw8DAWI5xlGMwFA6l9goqBgbG0oy2WNiG0XubM9qyKAYGxkqMJMiOlTOTBov2CF1nDTEwMBZi5IEv31zmMb49xJ4GXAwMDIxyp5kE07Hyw2nSDQMDAyMIl2PFgIT04P8NDAyMlzDy7V2bLEvujIVyDAyMfRhti0PeBJYsxMymEAMDYwPGD91HQc+GN00OAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.1" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

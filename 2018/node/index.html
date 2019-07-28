@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?887dce1cce44879d8dedd9d9ad97b6d9"></script>
+<!-- End Baidu Tongji -->
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Node.js | 草庙村 | 个人博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="前端">
+    <meta name="description" content="安装（Windows）先到官网下载 msi 安装包,建议下载 LTS（长期支持）版本。如图 1：                                                                                             图1             双击安装包，如图 2：">
+<meta name="keywords" content="前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node.js">
+<meta property="og:url" content="https://shawdanon.github.io/2018/node/index.html">
+<meta property="og:site_name" content="草庙村">
+<meta property="og:description" content="安装（Windows）先到官网下载 msi 安装包,建议下载 LTS（长期支持）版本。如图 1：                                                                                             图1             双击安装包，如图 2：">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://shawdanon.github.io/img/2018/1-25-1.png">
+<meta property="og:image" content="https://shawdanon.github.io/img/2018/1-25-2.png">
+<meta property="og:image" content="https://shawdanon.github.io/img/2018/1-25-3.png">
+<meta property="og:image" content="https://shawdanon.github.io/img/2018/1-25-4.png">
+<meta property="og:image" content="https://shawdanon.github.io/img/2018/1-25-5.png">
+<meta property="og:image" content="https://shawdanon.github.io/img/2018/1-25-6.png">
+<meta property="og:image" content="https://shawdanon.github.io/img/2018/1-25-7.png">
+<meta property="og:image" content="https://shawdanon.github.io/img/2018/1-25-8.png">
+<meta property="og:image" content="https://shawdanon.github.io/img/2018/1-25-9.png">
+<meta property="og:image" content="https://shawdanon.github.io/img/2018/1-25-10.png">
+<meta property="og:image" content="https://shawdanon.github.io/img/2018/1-25-11.png">
+<meta property="og:updated_time" content="2019-07-28T07:11:40.628Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Node.js">
+<meta name="twitter:description" content="安装（Windows）先到官网下载 msi 安装包,建议下载 LTS（长期支持）版本。如图 1：                                                                                             图1             双击安装包，如图 2：">
+<meta name="twitter:image" content="https://shawdanon.github.io/img/2018/1-25-1.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="草庙村" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.1">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">鬼厉</h5>
+          <a href="mailto:me@imtxp.cn" title="me@imtxp.cn" class="mail">me@imtxp.cn</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/nav"  >
+                <i class="icon icon-lg icon-folder"></i>
+                常用网址
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/time"  >
+                <i class="icon icon-lg icon-times"></i>
+                倒计时
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/ShawDanon" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Node.js</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Node.js</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-01-23T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2018年01月24日
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装（Windows）"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装（Windows）</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-2018/node"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Node.js</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018年01月24日 00:00:00" datetime="2018-01-23T16:00:00.000Z"  itemprop="datePublished">2018年01月24日</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="安装（Windows）"><a href="#安装（Windows）" class="headerlink" title="安装（Windows）"></a>安装（Windows）</h2><p>先到<a href="https://nodejs.org/en/" target="_blank" rel="noopener">官网</a>下载 msi 安装包,建议下载 LTS（长期支持）版本。如图 1：<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="../../img/2018/1-25-1.png" alt="图1" title>
+                </div>
+                <div class="image-caption">图1</div>
+            </figure><br>双击安装包，如图 2：<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="../../img/2018/1-25-2.png" alt="图2" title>
+                </div>
+                <div class="image-caption">图2</div>
+            </figure><br>点击 next，如图 3：<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="../../img/2018/1-25-3.png" alt="图3" title>
+                </div>
+                <div class="image-caption">图3</div>
+            </figure><br>勾选同意协议，点击 next，如图 4：<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="../../img/2018/1-25-4.png" alt="图4" title>
+                </div>
+                <div class="image-caption">图4</div>
+            </figure><br>选择安装路径，点击 next，如图 5：<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="../../img/2018/1-25-5.png" alt="图5" title>
+                </div>
+                <div class="image-caption">图5</div>
+            </figure><br>点击 next，如图 6：<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="../../img/2018/1-25-6.png" alt="图6" title>
+                </div>
+                <div class="image-caption">图6</div>
+            </figure><br>点击 install，如图 7：<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="../../img/2018/1-25-7.png" alt="图7" title>
+                </div>
+                <div class="image-caption">图7</div>
+            </figure><br>安装完成后，如图 8：<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="../../img/2018/1-25-8.png" alt="图8" title>
+                </div>
+                <div class="image-caption">图8</div>
+            </figure><br>为了验证是否安装成功，需要运行命令行来确认，使用 Windows+R 键打开运行界面，如图 9：<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="../../img/2018/1-25-9.png" alt="图9" title>
+                </div>
+                <div class="image-caption">图9</div>
+            </figure><br>输入 cmd，点击确定，出现命令行窗口，输入<code>node -v</code>出现版本号表示 node 安装成功，<code>npm -v</code>出现版本号表示 npm 安装成功。<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="../../img/2018/1-25-10.png" alt="图10" title>
+                </div>
+                <div class="image-caption">图10</div>
+            </figure><br>PS：由于 npm 的镜像源在国外，所以国内使用下载很慢，建议使用国内镜像安装快，操作步骤如下：<br>1、临时使用<br>打开命令行，输入<code>npm --registry https://registry.npm.taobao.org install package</code>，package 为需要安装的包名。<br>2、持久使用<br>打开命令行，输入<code>npm config set registry https://registry.npm.taobao.org</code>，更换 npm 镜像地址。可以通过输入命令<code>npm config get registry</code>来验证是否配置成功。成功如图 11：<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="../../img/2018/1-25-11.png" alt="图11" title>
+                </div>
+                <div class="image-caption">图11</div>
+            </figure><br>3、通过 cnpm 使用<br>打开命令行，输入<code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code>，安装完成后通过命令<code>cnpm install package</code>安装包，package 为需要安装的包名。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-07-28T07:11:40.628Z" itemprop="dateUpdated">2019年07月28日 15:11:40</time>
+</span><br>
+
+
+        
+        原文链接：<a href="/2018/node/" target="_blank" rel="external">https://shawdanon.github.io/2018/node/</a>
+        
+    </div>
+    <footer>
+        <a href="https://shawdanon.github.io">
+            <img src="/img/avatar.jpg" alt="鬼厉">
+            鬼厉
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://shawdanon.github.io/2018/node/&title=《Node.js》 — 草庙村&pic=https://shawdanon.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shawdanon.github.io/2018/node/&title=《Node.js》 — 草庙村&source=草庙村,个人博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://shawdanon.github.io/2018/node/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Node.js》 — 草庙村&url=https://shawdanon.github.io/2018/node/&via=https://shawdanon.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://shawdanon.github.io/2018/node/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/webpack/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">webpack总结</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/vue-cli/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">vue-cli环境搭建</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        赞助
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>鬼厉 &copy; 2016 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://shawdanon.github.io/2018/node/&title=《Node.js》 — 草庙村&pic=https://shawdanon.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shawdanon.github.io/2018/node/&title=《Node.js》 — 草庙村&source=草庙村,个人博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://shawdanon.github.io/2018/node/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Node.js》 — 草庙村&url=https://shawdanon.github.io/2018/node/&via=https://shawdanon.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://shawdanon.github.io/2018/node/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABxElEQVR42u3aQU4EMQwEwP3/p4crEjB0x5swSJUTQrNJ5WLZjl+veF1f1v3/81+9dixcXNwx97pdn79JKF+/uT8xN+Di4p7n3h+WbHTF66f9owvj4uI+ktuGvyQlwsXF/b/cPIm5L3JwcXH/C3cSkialzsZaDRcXd8DNu5T7/t7S38XFxV3iXuOVXC9vuf5yFi4u7hFuG3SShum7Xkh/DHm4uLhHuG1CMxm2mBRIuLi4Z7htMEpu314m+S0uLu55brv1WmnUJk/ffI+Li/tH3GQ8Ijm4fY6N2qm4uLgP4K4NXmwvfnBxcY9w85ZokujMWyTRBBkuLu42bpua5FdqdysGNXBxcY9w1wqVdtO1FKeeGsPFxR1z155L1wqetUeUKOLi4uK+lZsHo3y7yeNr/TKMi4u7gXsPbZsaSeAbJU+4uLhHuPMH1Ghsoly/JEa4uLibuVe52kyjHfAqHlFwcXG3cdeCS/vImqQ7k2QIFxd3BzcPXmsjGnkqg4uL+zRu20htA1keTYv+Li4u7gO47xq2GF0JFxf3Ydy1MqlNboqnVlxc3M3cefEzaXwUQRMXF/cItx2GyI+flDpv6O/i4uKucD8AhZIGHF4gaHcAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.1" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?887dce1cce44879d8dedd9d9ad97b6d9"></script>
+<!-- End Baidu Tongji -->
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>flutter折腾记 | 草庙村 | 个人博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="前端,笔记">
+    <meta name="description" content="期望 flutter 统一 JS 开发桌面客户端和 APP…">
+<meta name="keywords" content="前端,笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flutter折腾记">
+<meta property="og:url" content="https://shawdanon.github.io/2019/flutter/index.html">
+<meta property="og:site_name" content="草庙村">
+<meta property="og:description" content="期望 flutter 统一 JS 开发桌面客户端和 APP…">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-28T07:10:08.704Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="flutter折腾记">
+<meta name="twitter:description" content="期望 flutter 统一 JS 开发桌面客户端和 APP…">
+    
+        <link rel="alternate" type="application/atom+xml" title="草庙村" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.1">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">鬼厉</h5>
+          <a href="mailto:me@imtxp.cn" title="me@imtxp.cn" class="mail">me@imtxp.cn</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/nav"  >
+                <i class="icon icon-lg icon-folder"></i>
+                常用网址
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/time"  >
+                <i class="icon icon-lg icon-times"></i>
+                倒计时
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/ShawDanon" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">flutter折腾记</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">flutter折腾记</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-02-13T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2019年02月14日
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#环境配置"><span class="post-toc-number">1.</span> <span class="post-toc-text">环境配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Windows-环境配置"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Windows 环境配置</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#打包"><span class="post-toc-number">2.</span> <span class="post-toc-text">打包</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Windows-打包"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Windows 打包</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-2019/flutter"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">flutter折腾记</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019年02月14日 00:00:00" datetime="2019-02-13T16:00:00.000Z"  itemprop="datePublished">2019年02月14日</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>期望 flutter 统一 JS 开发桌面客户端和 APP…</p>
+<a id="more"></a>
+<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><h3 id="Windows-环境配置"><a href="#Windows-环境配置" class="headerlink" title="Windows 环境配置"></a>Windows 环境配置</h3><ol>
+<li>安装 jdk</li>
+<li>安装 flutter</li>
+<li>安装 Android Studio</li>
+<li>安装 sdk</li>
+<li>创建一个 demo</li>
+<li>安装模拟器</li>
+<li>通过 vscode 开发 flutter</li>
+</ol>
+<p>安装 jdk 很简单，通过<a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">oracle 官网</a>下载。点击下一步即可安装完成（PS：最后 jre 可以取消安装，避免重复安装）。为了方便使用配置好环境变量。</p>
+<p>安装 flutter 也简单，通过<a href="https://flutter.io/sdk-archive/#windows" target="_blank" rel="noopener">flutter 官网</a>下载。得到压缩包，在任意位置解压即可使用。在<code>flutter\bin</code>运行<code>flutter doctor</code>可以查看还需要安装哪儿些环境。为了方便使用将<code>flutter\bin</code>加入环境变量。从此命令可以得知我们还需要安装安卓 SDK 和安卓模拟器。</p>
+<p>安装 Android Studio 也简单（在翻墙的情况下），在<a href="https://developer.android.com/studio/" target="_blank" rel="noopener">安卓官网</a>下载，得到软件一路下一步即可安装。安装完成后需要安装 sdk。如果你不会翻墙，那么在<a href="http://www.android-studio.org/" target="_blank" rel="noopener">安卓中文社区</a>也能下载 Android Studio，安装 sdk 前需要设置 host 文件，给 host 文件添加<code>203.208.41.37 dl.google.com</code>,ip 地址是通过<a href="http://ping.chinaz.com/dl.google.com" target="_blank" rel="noopener">站长工具</a>检测<code>dl.google.com</code>这个域名得到响应最快的国内 ip 地址，配置好 host 文件后再下载 sdk 速度就很快了。</p>
+<p>安装完 sdk 后运行<code>flutter doctor</code>发现需要安装安卓证书，运行<code>flutter doctor --android-licenses</code>命令安装证书，提示选择 y。</p>
+<p>接下来通过 Android Studio 来创建一个 demo，首先安装 Android Studio 的插件 flutter，安装 flutter 会自动安装 dart，安装完重启 Android Studio 会在启动界面看到多出了个选项<code>start a new flutter project</code>。<br>通过这个选项创建一个 flutter APP。</p>
+<p>建好项目后，还需要项目运行环境，安卓模拟器，在 tools 里面选择 AVD manager，新加一个安卓模拟器，选择默认设备点击下一步，选择模拟器，模拟器旁边对应的安卓版本，还有 download 标识，标识没有下载，点击 download 下载模拟器（PS:如果不是 Intel 平台会比较麻烦），下载好后选择该模拟器，点击完成创建一个安卓模拟器。点击运行模拟器即可打开模拟器。</p>
+<p>打开模拟器后就可以使用 debug 来浏览项目了。如果没有翻墙，需要修改项目文件<code>android-&gt;build.gradle</code>。将</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">google();</span><br><span class="line">jcenter();</span><br></pre></td></tr></table></figure>
+<p>替换为</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">maven &#123; url <span class="string">'https://maven.aliyun.com/repository/google'</span> &#125;</span><br><span class="line">maven &#123; url <span class="string">'https://maven.aliyun.com/repository/jcenter'</span> &#125;</span><br><span class="line">maven &#123; url <span class="string">'http://maven.aliyun.com/nexus/content/groups/public'</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>如此就能成功运行起程序。</p>
+<p>作为 vscode 重度使用人来说换个编辑器还是有点不习惯的，那么怎么在 vscode 上开发 flutter 呢？首先我们需要解决脱离 Android Studio 能够运行起安卓模拟器。创建批处理文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\ShawDanon\AppData\Local\Android\Sdk\emulator\emulator.exe -netdelay none -netspeed full -avd Nexus_5X_API_28</span><br></pre></td></tr></table></figure>
+<p><code>C:\Users\ShawDanon\AppData\Local\Android\Sdk\emulator\emulator.exe</code>这个是安卓 sdk 路径下的可执行程序，需要改成你的路径。<code>Nexus_5X_API_28</code>是模拟器名字（名字本来是<code>Nexus 5X API 28</code>，空格使用下划线代替），在创建模拟器的时候可以设置。然后运行批处理文件即可打开安卓模拟器。</p>
+<p>通过 vscode 打开刚才创建的项目，发现没有高亮代码。然后安装插件 flutter，安装完成重启 vscode 发现代码高亮了，就可以在 vscode 运行 flutter 了。在 vscode 中运行<code>flutter run</code>即可在刚才启动的模拟器中运行应用，但是在 vscode 中不能热更新了，需要每次修改代码之后在命令行输入 r 才能在模拟器中看到效果，如果需要热更新，要使用 debug 。</p>
+<h2 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h2><h3 id="Windows-打包"><a href="#Windows-打包" class="headerlink" title="Windows 打包"></a>Windows 打包</h3><ol>
+<li>配置 app 图标</li>
+<li>AndroidManifest.xml（配置 APP 的名称、图标和系统权限）</li>
+<li>生成 keystore</li>
+<li>配置 key 注册</li>
+<li>生成 apk</li>
+</ol>
+<p>在目录<code>项目根目录/android/app/src/main/res/</code>中设置图标文件</p>
+<p>在目录<code>项目根目录/android/app/src/main/AndroidManifest.xml</code>中</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">android: label = <span class="string">'flutter_app'</span>; <span class="comment">//配置APP的名称，支持中文</span></span><br><span class="line">android: icon = <span class="string">'@mipmap/ic_launcher'</span>; <span class="comment">//APP图标的文件名称</span></span><br></pre></td></tr></table></figure>
+<p>通过<code>D:\Program\Android\&#39;Android Studio&#39;\jre\bin\keytool -genkey -v -keystore D:\key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key</code>命令来生成 keystore，输入密码后，在 d 盘得到一个 key.jks 文件。<code>D:\Program\Android\&#39;Android Studio&#39;\jre\bin\keytool</code>安卓生成钥匙的地址，通过 flutter doctor -v 可以查询到<code>Java binary at：D:\Program\Android\&#39;Android Studio&#39;\jre\bin\keytool</code>，<code>D:\key.jks</code>是生成钥匙的地址，生成好钥匙后，在<code>android</code>文件夹下创建一个名为 key.properties 的文件文件内容如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">storePassword=<span class="number">123123</span>   <span class="comment">//输入上一步创建KEY时输入的 密钥库 密码</span></span><br><span class="line">keyPassword=<span class="number">123123</span>   <span class="comment">//输入上一步创建KEY时输入的 密钥 密码</span></span><br><span class="line">keyAlias=key</span><br><span class="line">storeFile=D:\key.jks   <span class="comment">//key.jks的存放路径</span></span><br></pre></td></tr></table></figure>
+<p>key 生成好后需要配置 build.gradle 文件，在项目目录的/android/app/build.gradle 文件，在 android{这一行前面,加入如下代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def keystorePropertiesFile = rootProject.file(<span class="string">"key.properties"</span>)</span><br><span class="line">def keystoreProperties = <span class="keyword">new</span> Properties()</span><br><span class="line">keystoreProperties.load(<span class="keyword">new</span> FileInputStream(keystorePropertiesFile))</span><br></pre></td></tr></table></figure>
+<p>把如下代码进行替换:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">buildTypes &#123;</span><br><span class="line">    release &#123;</span><br><span class="line">        signingConfig signingConfigs.debug</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>替换的代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">signingConfigs &#123;</span><br><span class="line">    release &#123;</span><br><span class="line">        keyAlias keystoreProperties[<span class="string">'keyAlias'</span>]</span><br><span class="line">        keyPassword keystoreProperties[<span class="string">'keyPassword'</span>]</span><br><span class="line">        storeFile file(keystoreProperties[<span class="string">'storeFile'</span>])</span><br><span class="line">        storePassword keystoreProperties[<span class="string">'storePassword'</span>]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">buildTypes &#123;</span><br><span class="line">    release &#123;</span><br><span class="line">        signingConfig signingConfigs.release</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>配置改好后运行<code>flutter build apk</code>就能够打包成 apk 在手机安装了</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-07-28T07:10:08.704Z" itemprop="dateUpdated">2019年07月28日 15:10:08</time>
+</span><br>
+
+
+        
+        原文链接：<a href="/2019/flutter/" target="_blank" rel="external">https://shawdanon.github.io/2019/flutter/</a>
+        
+    </div>
+    <footer>
+        <a href="https://shawdanon.github.io">
+            <img src="/img/avatar.jpg" alt="鬼厉">
+            鬼厉
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://shawdanon.github.io/2019/flutter/&title=《flutter折腾记》 — 草庙村&pic=https://shawdanon.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shawdanon.github.io/2019/flutter/&title=《flutter折腾记》 — 草庙村&source=期望 flutter 统一 JS 开发桌面客户端和 APP…" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://shawdanon.github.io/2019/flutter/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《flutter折腾记》 — 草庙村&url=https://shawdanon.github.io/2019/flutter/&via=https://shawdanon.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://shawdanon.github.io/2019/flutter/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/typescript/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">typescript</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/read/learning-data-structures-and-algorithms/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">《学习 JavaScript 数据结构与算法》读书笔记</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        赞助
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>鬼厉 &copy; 2016 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://shawdanon.github.io/2019/flutter/&title=《flutter折腾记》 — 草庙村&pic=https://shawdanon.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shawdanon.github.io/2019/flutter/&title=《flutter折腾记》 — 草庙村&source=期望 flutter 统一 JS 开发桌面客户端和 APP…" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://shawdanon.github.io/2019/flutter/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《flutter折腾记》 — 草庙村&url=https://shawdanon.github.io/2019/flutter/&via=https://shawdanon.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://shawdanon.github.io/2019/flutter/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABwklEQVR42u3aQY7DIAwF0Ln/pTPbSlXptyGeaPRYVW0KjywsY/PzE4/rbbx+n3x+/eb9mcMDFxd3m3stx3rJZPnq/J+ewcXFneeul1+HofUCOTd6Bbi4uI/kJssks+Hi4v4/br58L1Di4uI+gZunIHmakqQ7N57VcHFxN7i9BOXs51vqu7i4uC3uVRz5bNVUKVodFxd3hJsHlLyQ0aMX5sHFxf0jbn55Im+o7F/1wMXFneRWixr59YtembV5CQMXF/cQNyl3JnvNWym99iouLu48N09o1s/02rT5K8PFxZ3hJqWKailkv6tTyMVwcXFv4OYpS/WQ0/v1S8EUFxd3kFstUuTt0jz+RAckXFzcEe5O8lFtqPQueRy4uImLi9viVo80PW71pXy04eLijnPPFkyTxky19YKLizvJzf9c3WSyvXwzuLi4k9xTwWjrdJV4cHFxb+ZexVEtd+apUrQ9XFzcEe4dR5c8PCUzNDeDi4u7zU2C1871rGrI+xJGcXFxB7nVlkavhHrgGVxc3Adz19vIg2PzxIaLi/tgbnUzB0qouLi4g9w86ORTVw9R0ZO4uLgj3GooOdVGvb2+i4uL2+H+AiWhhWRQ1vWkAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.1" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

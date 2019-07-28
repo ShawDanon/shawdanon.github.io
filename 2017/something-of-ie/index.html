@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?887dce1cce44879d8dedd9d9ad97b6d9"></script>
+<!-- End Baidu Tongji -->
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>判断IE版本的HTML语句 | 草庙村 | 个人博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="前端">
+    <meta name="description" content="IE那些事…">
+<meta name="keywords" content="前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="判断IE版本的HTML语句">
+<meta property="og:url" content="https://shawdanon.github.io/2017/something-of-ie/index.html">
+<meta property="og:site_name" content="草庙村">
+<meta property="og:description" content="IE那些事…">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-28T05:15:18.293Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="判断IE版本的HTML语句">
+<meta name="twitter:description" content="IE那些事…">
+    
+        <link rel="alternate" type="application/atom+xml" title="草庙村" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.1">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">鬼厉</h5>
+          <a href="mailto:me@imtxp.cn" title="me@imtxp.cn" class="mail">me@imtxp.cn</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/nav"  >
+                <i class="icon icon-lg icon-folder"></i>
+                常用网址
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/time"  >
+                <i class="icon icon-lg icon-times"></i>
+                倒计时
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/ShawDanon" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">判断IE版本的HTML语句</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">判断IE版本的HTML语句</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-08-13T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2017年08月14日
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+<article id="post-2017/something-of-ie"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">判断IE版本的HTML语句</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017年08月14日 00:00:00" datetime="2017-08-13T16:00:00.000Z"  itemprop="datePublished">2017年08月14日</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>IE那些事…</p>
+<a id="more"></a>
+<p>经常用一些框架会看到类似注释一样的语句，例如bootstrap里的：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--[if lt IE 9]&gt;</span></span><br><span class="line"><span class="comment">    &lt;script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">    &lt;script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure>
+<p>写了这个代码就能兼容IE8了。那么这些代码是什么意思呢？我们来看下面例子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--[if !IE]&gt;除IE外都可识别 &lt;![endif]--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--[if IE]&gt; 所有的IE可识别 &lt;![endif]--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--[if IE 6]&gt; 仅IE6可识别 &lt;![endif]--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--[if lt IE 6]&gt; IE6以及IE6以下版本可识别 &lt;![endif]--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--[if gte IE 6]&gt; IE6以及IE6以上版本可识别 &lt;![endif]--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--[if IE 7]&gt; 仅IE7可识别 &lt;![endif]--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--[if lt IE 7]&gt; IE7以及IE7以下版本可识别 &lt;![endif]--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--[if gte IE 7]&gt; IE7以及IE7以上版本可识别 &lt;![endif]--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--[if IE 8]&gt; 仅IE8可识别 &lt;![endif]--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--[if IE 9]&gt; 仅IE9可识别 &lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>语句</th>
+<th>例子</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>!</td>
+<td>[if !IE]</td>
+<td>NOT运算符。这是摆立即在前面的功能，操作员，或子表达式扭转布尔表达式的意义。</td>
+</tr>
+<tr>
+<td>lt</td>
+<td>[if lt IE 5.5]</td>
+<td>小于运算符。如果第一个参数小于第二个参数，则返回true。</td>
+</tr>
+<tr>
+<td>lte</td>
+<td>[if lte IE 6]</td>
+<td>小于或等于运算。如果第一个参数是小于或等于第二个参数，则返回true。</td>
+</tr>
+<tr>
+<td>gt</td>
+<td>[if gt IE 5]</td>
+<td>大于运算符。如果第一个参数大于第二个参数，则返回true。</td>
+</tr>
+<tr>
+<td>gte</td>
+<td>[if gte IE 7]</td>
+<td>大于或等于运算。如果第一个参数是大于或等于第二个参数，则返回true。</td>
+</tr>
+<tr>
+<td>()</td>
+<td>[if !(IE 7)]</td>
+<td>子表达式运营商。在与布尔运算符用于创建更复杂的表达式。</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>[if (gt IE 5)&amp;(lt IE 7)]</td>
+<td>AND运算符。如果所有的子表达式计算结果为true，返回true</td>
+</tr>
+<tr>
+<td>&#124;</td>
+<td>[if (IE 6)&#124;(IE 7)]</td>
+<td>OR运算符。返回true，如果子表达式计算结果为true。</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-07-28T05:15:18.293Z" itemprop="dateUpdated">2019年07月28日 13:15:18</time>
+</span><br>
+
+
+        
+        原文链接：<a href="/2017/something-of-ie/" target="_blank" rel="external">https://shawdanon.github.io/2017/something-of-ie/</a>
+        
+    </div>
+    <footer>
+        <a href="https://shawdanon.github.io">
+            <img src="/img/avatar.jpg" alt="鬼厉">
+            鬼厉
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://shawdanon.github.io/2017/something-of-ie/&title=《判断IE版本的HTML语句》 — 草庙村&pic=https://shawdanon.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shawdanon.github.io/2017/something-of-ie/&title=《判断IE版本的HTML语句》 — 草庙村&source=IE那些事…" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://shawdanon.github.io/2017/something-of-ie/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《判断IE版本的HTML语句》 — 草庙村&url=https://shawdanon.github.io/2017/something-of-ie/&via=https://shawdanon.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://shawdanon.github.io/2017/something-of-ie/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/jekyll-build/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">jekyll</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/move-into-jekyll/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">搬入jekyll</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        赞助
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>鬼厉 &copy; 2016 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://shawdanon.github.io/2017/something-of-ie/&title=《判断IE版本的HTML语句》 — 草庙村&pic=https://shawdanon.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shawdanon.github.io/2017/something-of-ie/&title=《判断IE版本的HTML语句》 — 草庙村&source=IE那些事…" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://shawdanon.github.io/2017/something-of-ie/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《判断IE版本的HTML语句》 — 草庙村&url=https://shawdanon.github.io/2017/something-of-ie/&via=https://shawdanon.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://shawdanon.github.io/2017/something-of-ie/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLklEQVR42u3aUY7DIAxF0e5/05kFVEnus+lImMtXpZKQw4eFbT4fPK6vcfcvmf/97N17Fg8ZMmRsy7geB5lDnnrmPf9+XkWGDBnnMEgo5HP48mQjnteVIUOGjLs5qwIuD74yZMiQkQZT9OrHRJcksTJkyJDRD4Kd4yA/Gi7OxWXIkLEhg1fd///3T/obMmTI2IrRKfeT0Jl+1lUaMmTImM3gy6TNyOfjYCcZvl1FhgwZRzJ405Gz+dakMBkyZExlkFI+KYqlxz5yKORtVBkyZMxm1D49DaMdzLIGgAwZMjZnpNe50ksSvJHZSnFlyJAxmlErq/W3ozZ/QfCVIUPG5ow0gKZF/DQot65lyJAhYxyjeMVhURpMmhAoGZYhQ8YBjE6SSd5APpoU8lBLQIYMGSMYvCiWppGrLmSgLZMhQ8YBjE4yWQu7tbbl7eoyZMgYzUgPYWlSSrYmvvKVvkKGDBkjGCkgbU+S4lpaaAvuj8iQIWMEgySZ/HNr4ZsfAYOWgAwZMsYx0sNcscVYCtbosoUMGTKOYaSHNl4a66fTL/NlyJBxAIMv0ElB0+Zl0EKQIUPGUMYVDrJk51pGWpL78HOlDBkytmXUeoJru4r8WFlLs2XIkDGD0Spy/SBE1sAyZMg4gZEGPn4NgrcBWkgZMmTICD+ah+a0CfqSkcuQIUNGyOPNAEJ6QcqQIeMABklia9cseCOhsykyZMiYzeCpY7+U3w+vrXKeDBky9mP8AefWQc8NHWOlAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.1" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

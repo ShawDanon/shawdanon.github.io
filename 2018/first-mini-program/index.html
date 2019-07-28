@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?887dce1cce44879d8dedd9d9ad97b6d9"></script>
+<!-- End Baidu Tongji -->
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>记一次小程序开发 | 草庙村 | 个人博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="前端,总结">
+    <meta name="description" content="第一次小程序开发。">
+<meta name="keywords" content="前端,总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记一次小程序开发">
+<meta property="og:url" content="https://shawdanon.github.io/2018/first-mini-program/index.html">
+<meta property="og:site_name" content="草庙村">
+<meta property="og:description" content="第一次小程序开发。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-28T07:11:11.398Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="记一次小程序开发">
+<meta name="twitter:description" content="第一次小程序开发。">
+    
+        <link rel="alternate" type="application/atom+xml" title="草庙村" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.1">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">鬼厉</h5>
+          <a href="mailto:me@imtxp.cn" title="me@imtxp.cn" class="mail">me@imtxp.cn</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/nav"  >
+                <i class="icon icon-lg icon-folder"></i>
+                常用网址
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/time"  >
+                <i class="icon icon-lg icon-times"></i>
+                倒计时
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/ShawDanon" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">记一次小程序开发</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">记一次小程序开发</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-09-27T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2018年09月28日
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#统计"><span class="post-toc-number">1.</span> <span class="post-toc-text">统计</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#背景"><span class="post-toc-number">2.</span> <span class="post-toc-text">背景</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#需求"><span class="post-toc-number">3.</span> <span class="post-toc-text">需求</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#详细经历"><span class="post-toc-number">4.</span> <span class="post-toc-text">详细经历</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第一周"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">第一周</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第二周"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">第二周</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第三周"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">第三周</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第四周"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">第四周</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#需要改进的地方"><span class="post-toc-number">5.</span> <span class="post-toc-text">需要改进的地方</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于错误处理"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">关于错误处理</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-2018/first-mini-program"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">记一次小程序开发</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018年09月28日 00:00:00" datetime="2018-09-27T16:00:00.000Z"  itemprop="datePublished">2018年09月28日</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>第一次小程序开发。</p>
+<a id="more"></a>
+<h2 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h2><p>开始时间：2018.8.20<br>开发结束时间：2018.9.21<br>测试结束时间：2018.9.28<br>页面组件统计:32 个页面组件<br>公共组件统计:11 个公共组件<br>实际工作时间(包括加班):开发 271.5 小时，测试 67.5 小时</p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>第一次做手机端 APP，第一次使用小程序开发，第一次使用数据驱动做公司项目（原来用的 jQuery 进行 dom 操作）。</p>
+<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>按照 APP（商城类）开发小程序</p>
+<h2 id="详细经历"><a href="#详细经历" class="headerlink" title="详细经历"></a>详细经历</h2><h3 id="第一周"><a href="#第一周" class="headerlink" title="第一周"></a>第一周</h3><ol>
+<li>像素单位用 rpx,2rpx ＝ 1px。</li>
+<li>flex 垂直布局 margin-right 失效。</li>
+</ol>
+<h3 id="第二周"><a href="#第二周" class="headerlink" title="第二周"></a>第二周</h3><ol>
+<li>问题：Java 后端返回 id 为 lang 类型，前端获取会丢失精度。</li>
+<li>创建了控制器文件夹，用来放与后端交互的接口(也不知道也没用)。</li>
+<li>用 promise 封装了常用的请求方法，做了统一错误处理，后台异常处理。</li>
+</ol>
+<h3 id="第三周"><a href="#第三周" class="headerlink" title="第三周"></a>第三周</h3><ol>
+<li>发现有很多表单页面相似，于是封装了一个表单页面组件，通过给组件传入页面元素配置和验证规则实现复用。</li>
+<li>创建测试页面通过按钮的方式来测试后端接口是否有问题。</li>
+<li>移动端分页</li>
+</ol>
+<h3 id="第四周"><a href="#第四周" class="headerlink" title="第四周"></a>第四周</h3><ol>
+<li>图片上传踩坑：刚开始：因为不能使用原生，通过查文档使用 wx.chooseImage 选择图片获取临时路径、把临时路径作为一个请求的 url，把数据返回格式设置成 arraybuffer 可以拿到图片 base64 格式提交给后端，这个方法在微信模拟器没什么问题，在真机上就会报错了。解决方案：wx.chooseImage 选择图片获取临时路径，readFile()读取文件获取 base64 格式编码。</li>
+<li>支付接口踩坑：刚开始：通过 wx.login()拿到 code，在访问腾讯地址拿到 openid，然后传给后端拿到掉支付接口需要的字段，最后掉起接口 wx.requestPayment()弹出微信支付界面，通过回调判断支付是否成功给后端反馈，这个方法有一个步骤出问题了，在微信开发工具中开启忽略验证不会有问题，上线了就会访问不了腾讯地址获取 openid，因为腾讯默认这个地址不合法。解决方案：获取 oppenid 这一步放到后端实现就可以解决。</li>
+</ol>
+<h2 id="需要改进的地方"><a href="#需要改进的地方" class="headerlink" title="需要改进的地方"></a>需要改进的地方</h2><h3 id="关于错误处理"><a href="#关于错误处理" class="headerlink" title="关于错误处理"></a>关于错误处理</h3><ol>
+<li>后端返回错误码和提示信息统一处理（已有，通过弹窗形式提示错误信息），应该换种形式来区分前端写的提示信息。</li>
+</ol>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-07-28T07:11:11.398Z" itemprop="dateUpdated">2019年07月28日 15:11:11</time>
+</span><br>
+
+
+        
+        原文链接：<a href="/2018/first-mini-program/" target="_blank" rel="external">https://shawdanon.github.io/2018/first-mini-program/</a>
+        
+    </div>
+    <footer>
+        <a href="https://shawdanon.github.io">
+            <img src="/img/avatar.jpg" alt="鬼厉">
+            鬼厉
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://shawdanon.github.io/2018/first-mini-program/&title=《记一次小程序开发》 — 草庙村&pic=https://shawdanon.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shawdanon.github.io/2018/first-mini-program/&title=《记一次小程序开发》 — 草庙村&source=第一次小程序开发。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://shawdanon.github.io/2018/first-mini-program/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《记一次小程序开发》 — 草庙村&url=https://shawdanon.github.io/2018/first-mini-program/&via=https://shawdanon.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://shawdanon.github.io/2018/first-mini-program/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/collection/front-end-Interview/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">前端开发人员面试问题</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/arrangement/read/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">阅读</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        赞助
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>鬼厉 &copy; 2016 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://shawdanon.github.io/2018/first-mini-program/&title=《记一次小程序开发》 — 草庙村&pic=https://shawdanon.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shawdanon.github.io/2018/first-mini-program/&title=《记一次小程序开发》 — 草庙村&source=第一次小程序开发。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://shawdanon.github.io/2018/first-mini-program/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《记一次小程序开发》 — 草庙村&url=https://shawdanon.github.io/2018/first-mini-program/&via=https://shawdanon.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://shawdanon.github.io/2018/first-mini-program/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLElEQVR42u3ay3LDIBBEUf//TyvbuBKPunuIKgxXK5ctAccLNA9eL/m6vl2fvqnvr0d2nwovGDBgbMu4yqtm/PysLNEduV4bDBgwzmEoi6jvqZer35/NCwMGDBhKCKjfU2+7MGDAgNFnZEFelvrCgAEDhrshKqW3OhzMQsPFuTgMGDA2ZOhV9+c//0l/AwYMGFsxLvPqF/1XreRtZBgwYIxm6BtcK70sg0J9hJtkGAYMGEMZbmrqlsn0Z+sN+uYbGDBgHMzIjlbo5bbOs2/fwIABYzRj7WTZCHr7YUFdEAYMGNsy9ARVCeD67DDFhQEDxlCGPoGbjrpjZoU5GDBgnMDIGo39ZqQbCCojwIABYzbD3YLdAM4NE90wFAYMGLMZ2cEvt1WQjaaPDAMGjNmMTlbY+dUt84VpLQwYMAYx3C1y7dGx7KiH8faAAQPG5gx3s6sn1pug/TcDDBgwTmPYNTl5Gv0Qhr6GmzcGDBgwxjH0KbMmQRYsun8BDBgwTmPoCzKOPsiBptsA+OXtAQMGjNEMN2jLNtz+0Q2jaggDBoxxjJd5PXpgQhkfBgwYQxmXebnhnV3il1uqN8csYMCAMYiRba9u89JNUN1EFwYMGCcwOi1GF5/9Za1yGwwYMAYxjKxXmLJeSifs+zgyDBgwYJjbq17cd5sKUh0OBgwYMBqJbn+DfnTDhQEDxj9j9I+uZgmw++yCchsMGDA2ZLROajTS2lXtARgwYIxmfAG0LgPx9YOsoAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.1" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

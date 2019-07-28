@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?887dce1cce44879d8dedd9d9ad97b6d9"></script>
+<!-- End Baidu Tongji -->
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>vue-cli环境搭建 | 草庙村 | 个人博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="前端">
+    <meta name="description" content="vue-cli 环境搭建。">
+<meta name="keywords" content="前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-cli环境搭建">
+<meta property="og:url" content="https://shawdanon.github.io/2018/vue-cli/index.html">
+<meta property="og:site_name" content="草庙村">
+<meta property="og:description" content="vue-cli 环境搭建。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://shawdanon.github.io/img/2018/1-25-12.png">
+<meta property="og:updated_time" content="2019-07-28T07:13:13.104Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue-cli环境搭建">
+<meta name="twitter:description" content="vue-cli 环境搭建。">
+<meta name="twitter:image" content="https://shawdanon.github.io/img/2018/1-25-12.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="草庙村" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.1">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">鬼厉</h5>
+          <a href="mailto:me@imtxp.cn" title="me@imtxp.cn" class="mail">me@imtxp.cn</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/nav"  >
+                <i class="icon icon-lg icon-folder"></i>
+                常用网址
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/time"  >
+                <i class="icon icon-lg icon-times"></i>
+                倒计时
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/ShawDanon" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">vue-cli环境搭建</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">vue-cli环境搭建</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-01-23T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2018年01月24日
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装-node"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装 node</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装-vue"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装 vue</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#搭建-vue-cli-脚手架"><span class="post-toc-number">3.</span> <span class="post-toc-text">搭建 vue-cli 脚手架</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-2018/vue-cli"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">vue-cli环境搭建</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018年01月24日 00:00:00" datetime="2018-01-23T16:00:00.000Z"  itemprop="datePublished">2018年01月24日</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>vue-cli 环境搭建。</p>
+<a id="more"></a>
+<h2 id="安装-node"><a href="#安装-node" class="headerlink" title="安装 node"></a>安装 node</h2><p>因为需要 npm 来装 vue-cli，所以需要先装 node，没有装的同学移步<a href="../node">node</a>进行安装。</p>
+<h2 id="安装-vue"><a href="#安装-vue" class="headerlink" title="安装 vue"></a>安装 vue</h2><p>打开命令行输入<code>npm install -g vue-cli</code></p>
+<h2 id="搭建-vue-cli-脚手架"><a href="#搭建-vue-cli-脚手架" class="headerlink" title="搭建 vue-cli 脚手架"></a>搭建 vue-cli 脚手架</h2><p>打开命令行输入<code>vue init webpack vue-test</code><br>vue-cli 的配置信息：<br><strong>Project name (vue-test)</strong>项目名称，可以自己指定，也可直接回车，按照括号中默认名字（注意这里的名字不能有大写字母，如果有会报错 Sorry, name can no longer contain capital letters）。<br><strong>Project description (A Vue.js project)</strong>项目描述，也可直接点击回车，使用默认名字。<br><strong>Author</strong> 作者，同上。<br><strong>Vue build（Use arrow keys)</strong><br>1、<strong>Runtime + Compiler: recommended for most users</strong>运行+编译，推荐给大多数用户，点击回车选择。<br>2、<strong>Runtime-only: about 6KB lighter min+gzip, but templates (or any Vue-specificHTML) are ONLY allowed in .vue files - render functions are required elsewhere</strong>仅运行时，已经选择第一个了。<br><strong>Install vue-router? (Y/n)</strong>是否安装 vue-router，这是官方的路由，大多数情况下都使用。这里就输入“y”后回车即可。<br><strong>Use ESLint to lint your code? (Y/n)</strong>是否使用 ESLint 管理代码，ESLint 是个代码风格管理工具，是用来统一代码风格的，并不会影响整体的运行，这也是为了多人协作，新手就不用了，一般项目中都会使用。<a href="https://eslint.org/" target="_blank" rel="noopener">ESLint 官网</a>，这里就输入“y””n”都可以。<br><strong>Pick an ESLint preset (Use arrow keys)</strong>选择一个 ESLint 预设，编写 vue 项目时的代码风格，因为我选择了使用 ESLint。<br>1、<strong><a href="https://github.com/feross/standard" target="_blank" rel="noopener">Standard</a></strong>标准，有些看不明白，什么标准呢，去给提示的 standardgithub 地址看一下， 原来时 js 的标准风格。<br>2、<strong><a href="https://github.com/airbnb/javascript" target="_blank" rel="noopener">AirBNB</a></strong>JavaScript 最合理的方法，这个 github 地址说的是 JavaScript 最合理的方法。<br>3、<strong>none (configure it yourself)</strong>不选择。</p>
+<p><strong>Set up unit tests? (Y/n)</strong>是否安装单元测试，我选择安装。<br><strong>Pick a test runner? (Use arrow keys)</strong>选择自动化测试工具。<br>1、<strong>Jest</strong>Facebook 开发的一个对 javascript 进行单元测试的工具。<br>2、<strong>karma and Mocha</strong>常用的自动化测试工具，我选它。<br>3、<strong>none(configure it yourself)</strong>不选择。<br><strong>Setup e2e tests with Nightwatch(Y/n)?</strong>是否安装 e2e 测试 ，我选择安装。<br><strong>Should we run <code>npm install</code> for you after the project has been created? (recommended) (Use arrow keys)</strong>选择用什么安装依赖包。<br>1、<strong>Yes, use NPM</strong>选择 npm 安装。<br>2、<strong>Yes, use Yarn</strong>选择 yarn 安装。<br>3、<strong>No, I will handle that myself</strong>暂时安装，自行安装。我选择这个。<br>基本框架搭建完成，进入 vue-test 目录，打开命令行，输入<code>npm install</code>开始安装所需要的依赖包。<br>装完后（所有依赖正常安装），输入命令<code>npm run dev</code>开始运行示例页面。默认访问 127.0.0.1:8080。示例如图 1：<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="../../img/2018/1-25-12.png" alt="图1" title>
+                </div>
+                <div class="image-caption">图1</div>
+            </figure></p>
+<p>下面来看看项目目录：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">├──</span> <span class="string">build/</span>                      <span class="comment"># webpack配置参数文件</span></span><br><span class="line"><span class="string">│</span>   <span class="string">└──</span> <span class="string">...</span></span><br><span class="line"><span class="string">├──</span> <span class="string">config/</span></span><br><span class="line"><span class="string">│</span>   <span class="string">├──</span> <span class="string">index.js</span>                <span class="comment"># 主项目的配置</span></span><br><span class="line"><span class="string">│</span>   <span class="string">└──</span> <span class="string">...</span></span><br><span class="line"><span class="string">├──</span> <span class="string">src/</span></span><br><span class="line"><span class="string">│</span>   <span class="string">├──</span> <span class="string">main.js</span>                 <span class="comment"># 应用入口</span></span><br><span class="line"><span class="string">│</span>   <span class="string">├──</span> <span class="string">App.vue</span>                 <span class="comment"># 主应用组件</span></span><br><span class="line"><span class="string">│</span>   <span class="string">├──</span> <span class="string">router/</span>                 <span class="comment"># 路由</span></span><br><span class="line"><span class="string">│</span>   <span class="string">│</span>   <span class="string">└──</span> <span class="string">index.js</span>            <span class="comment"># 路由配置文件</span></span><br><span class="line"><span class="string">│</span>   <span class="string">├──</span> <span class="string">components/</span>             <span class="comment"># UI组件</span></span><br><span class="line"><span class="string">│</span>   <span class="string">│</span>   <span class="string">└──</span> <span class="string">...</span></span><br><span class="line"><span class="string">│</span>   <span class="string">└──</span> <span class="string">assets/</span>                 <span class="comment"># 模块资源（webpack提供）</span></span><br><span class="line"><span class="string">│</span>       <span class="string">└──</span> <span class="string">...</span></span><br><span class="line"><span class="string">├──</span> <span class="string">static/</span>                     <span class="comment"># 纯静态资源（打包时直接复制）</span></span><br><span class="line"><span class="string">├──</span> <span class="string">test/</span></span><br><span class="line"><span class="string">│</span>   <span class="string">└──</span> <span class="string">unit/</span>                   <span class="comment"># 单元测试</span></span><br><span class="line"><span class="string">│</span>   <span class="string">└──</span> <span class="string">e2e/</span>                    <span class="comment"># e2e tests测试</span></span><br><span class="line"><span class="string">├──</span> <span class="string">.babelrc</span>                    <span class="comment"># babel编译参数</span></span><br><span class="line"><span class="string">├──</span> <span class="string">.editorconfig</span>               <span class="comment"># 编辑器配置</span></span><br><span class="line"><span class="string">├──</span> <span class="string">.eslintignore</span></span><br><span class="line"><span class="string">├──</span> <span class="string">.eslintrc.js</span>                <span class="comment"># eslint配置文件，用以规范团队开发编码规范</span></span><br><span class="line"><span class="string">├──</span> <span class="string">.gitignore</span>                  <span class="comment"># github提交文件屏蔽的配置文件</span></span><br><span class="line"><span class="string">├──</span> <span class="string">.postcssrc.js</span></span><br><span class="line"><span class="string">├──</span> <span class="string">index.html</span>                  <span class="comment"># 主页模板</span></span><br><span class="line"><span class="string">├──</span> <span class="string">package.json</span>                <span class="comment"># 项目文件，记载着一些命令和依赖还有简要的项目描述信息</span></span><br><span class="line"><span class="string">└──</span> <span class="string">README.md</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-07-28T07:13:13.104Z" itemprop="dateUpdated">2019年07月28日 15:13:13</time>
+</span><br>
+
+
+        
+        原文链接：<a href="/2018/vue-cli/" target="_blank" rel="external">https://shawdanon.github.io/2018/vue-cli/</a>
+        
+    </div>
+    <footer>
+        <a href="https://shawdanon.github.io">
+            <img src="/img/avatar.jpg" alt="鬼厉">
+            鬼厉
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://shawdanon.github.io/2018/vue-cli/&title=《vue-cli环境搭建》 — 草庙村&pic=https://shawdanon.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shawdanon.github.io/2018/vue-cli/&title=《vue-cli环境搭建》 — 草庙村&source=vue-cli 环境搭建。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://shawdanon.github.io/2018/vue-cli/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue-cli环境搭建》 — 草庙村&url=https://shawdanon.github.io/2018/vue-cli/&via=https://shawdanon.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://shawdanon.github.io/2018/vue-cli/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/node/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Node.js</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/Tomcat/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Tomcat安装</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        赞助
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>鬼厉 &copy; 2016 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://shawdanon.github.io/2018/vue-cli/&title=《vue-cli环境搭建》 — 草庙村&pic=https://shawdanon.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shawdanon.github.io/2018/vue-cli/&title=《vue-cli环境搭建》 — 草庙村&source=vue-cli 环境搭建。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://shawdanon.github.io/2018/vue-cli/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue-cli环境搭建》 — 草庙村&url=https://shawdanon.github.io/2018/vue-cli/&via=https://shawdanon.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://shawdanon.github.io/2018/vue-cli/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABw0lEQVR42u3aS27DMAwFwNz/0imQVTd2HklJcIDRKkhca9QFIX5er3i9P+v+m//fX63kDQsWLi7umJtscP85wS17Dy4u7kFu8upJOLv6NTfg4uI+k3vP6oUtXFzcX+debXOPxsXF/V1ukvwkV5Y8fdqeq+Hi4g641YLpjs8b67u4uLhF7ru4khJJL9hFu+Pi4h7h9hqo1StLskueDuHi4u7m5uWM/GoySlruAyIuLu4RbjVRyQsZ+fWoGvJwcXF3c9eWQXsNmGTHBdkVLi5uzK0OXeVp0qRl+8WGi4t7kJu/OglJSfrUG+PAxcXdzS00MJKRqeIgRRS2cHFxj3NXzTxUSyrV1KhwAFxc3DG3F8iqwa5Qu73vmODi4h7kTgY0e4esxldcXNyT3N6f5WWRankluh7h4uJu5k7aq6uezw+Ji4t7kludbcgLqdWmy5eD4eLiHuTmq1ru7I1tjWq3uLi4Y241oFSHrsol0VboxMXF3cGdN1CT0FZtyTRnRnBxcZdyq+GpGuyWPYOLi/sw7qg5Om7b4OLiPpmbbJw/X/5H4OLiHuQmyU91g96RlpVFcHFxB9xewXQ0C9Zq0OLi4h7h/gENz91E0zxDigAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.1" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

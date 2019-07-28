@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?887dce1cce44879d8dedd9d9ad97b6d9"></script>
+<!-- End Baidu Tongji -->
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>MySQL安装 | 草庙村 | 个人博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="数据库">
+    <meta name="description" content="mysql 安装总结…">
+<meta name="keywords" content="数据库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL安装">
+<meta property="og:url" content="https://shawdanon.github.io/2018/mySQL/index.html">
+<meta property="og:site_name" content="草庙村">
+<meta property="og:description" content="mysql 安装总结…">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-28T07:11:24.981Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MySQL安装">
+<meta name="twitter:description" content="mysql 安装总结…">
+    
+        <link rel="alternate" type="application/atom+xml" title="草庙村" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.1">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">鬼厉</h5>
+          <a href="mailto:me@imtxp.cn" title="me@imtxp.cn" class="mail">me@imtxp.cn</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/nav"  >
+                <i class="icon icon-lg icon-folder"></i>
+                常用网址
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/time"  >
+                <i class="icon icon-lg icon-times"></i>
+                倒计时
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/ShawDanon" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">MySQL安装</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">MySQL安装</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-01-01T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2018年01月02日
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#下载-MySQL"><span class="post-toc-number">1.</span> <span class="post-toc-text">下载 MySQL</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置-MySQL"><span class="post-toc-number">2.</span> <span class="post-toc-text">配置 MySQL</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置环境变量"><span class="post-toc-number">3.</span> <span class="post-toc-text">配置环境变量</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#登录-MySQL"><span class="post-toc-number">4.</span> <span class="post-toc-text">登录 MySQL</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#修改密码（忘记密码）"><span class="post-toc-number">5.</span> <span class="post-toc-text">修改密码（忘记密码）</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-2018/mySQL"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">MySQL安装</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018年01月02日 00:00:00" datetime="2018-01-01T16:00:00.000Z"  itemprop="datePublished">2018年01月02日</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>mysql 安装总结…</p>
+<a id="more"></a>
+<h2 id="下载-MySQL"><a href="#下载-MySQL" class="headerlink" title="下载 MySQL"></a>下载 MySQL</h2><p>打开<a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">MySQL 社区版官方下载</a>下载 Windows (x86, 32-bit/64-bit), ZIP Archive 安装包。32 位 64 位根据电脑选。我目前的版本是 5.7.20。</p>
+<h2 id="配置-MySQL"><a href="#配置-MySQL" class="headerlink" title="配置 MySQL"></a>配置 MySQL</h2><p>下载并复制到 mysql 里的 bin 目录下。<br>解压安装包，在安装包目录创建一个 data 空文件夹和创建一个 my.ini 文件，文件内容如下。</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[mysql]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; 设置mysql客户端默认字符集</span></span><br><span class="line"></span><br><span class="line"><span class="attr">default-character-set</span>=utf8</span><br><span class="line"></span><br><span class="line"><span class="section">[mysqld]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">;设置3306端口</span></span><br><span class="line"></span><br><span class="line"><span class="attr">port</span> = <span class="number">3306</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; 设置mysql的安装目录(需要改动成你的目录)</span></span><br><span class="line"></span><br><span class="line"><span class="attr">basedir</span>=C:\Users\Administrator\Desktop\java\mysql-<span class="number">5.7</span>.<span class="number">20</span>-winx64</span><br><span class="line"></span><br><span class="line"><span class="comment">; 设置mysql数据库的数据的存放目录(需要改动成你的目录)</span></span><br><span class="line"></span><br><span class="line"><span class="attr">datadir</span>=C:\Users\Administrator\Desktop\java\mysql-<span class="number">5.7</span>.<span class="number">20</span>-winx64\data</span><br><span class="line"></span><br><span class="line"><span class="comment">; 允许最大连接数</span></span><br><span class="line"></span><br><span class="line"><span class="attr">max_connections</span>=<span class="number">200</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; 服务端使用的字符集默认为8比特编码的latin1字符集</span></span><br><span class="line"></span><br><span class="line"><span class="attr">character-set-server</span>=utf8</span><br><span class="line"></span><br><span class="line"><span class="comment">; 创建新表时将使用的默认存储引擎</span></span><br><span class="line"></span><br><span class="line"><span class="attr">default-storage-engine</span>=INNODB</span><br></pre></td></tr></table></figure>
+<p>1、安装 MySQL 服务<br>打开命令行，进入 MySQL 的 bin 目录。<br>2、安装 Windows 服务<br>输入<code>mysqld install</code>，出现<code>The service already exists</code>则安装成功。<br>3、初始化 data 目录<br>输入<code>mysqld --initialize-insecure --user=mysql</code>，不报错则初始化成功。<br>PS:使用-initialize 生成随机密码，使用-initialize-insecure 生成空密码。默认帐号 root,后面的-user=mysql 不更改<br>4、启动 MySQL 服务<br>输入<code>net start mysql</code>，出现<code>MySQL 服务启动成功</code>则启动服务成功。</p>
+<h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><p>1、打开环境变量设置：<br>在我的电脑上右键-&gt;点击属性-&gt;点击高级系统设置-&gt;点击环境变量<br>复制你 mysql 文件路径，在系统变量里找到 Path 变量，点击编辑，光标移动到最前面，粘贴，加上;即可。</p>
+<h2 id="登录-MySQL"><a href="#登录-MySQL" class="headerlink" title="登录 MySQL"></a>登录 MySQL</h2><p>打开命令行。<br>输入<code>mysql -uroot -p</code>，输入密码，出现<code>mysql&gt;</code>则成功登录。</p>
+<h2 id="修改密码（忘记密码）"><a href="#修改密码（忘记密码）" class="headerlink" title="修改密码（忘记密码）"></a>修改密码（忘记密码）</h2><p>my.ini 配置文件[mysqld]条目下加一条命令 skip-grant-tables,然后重启 mysql 服务。<br>1、进入 MySQL 数据库：<br>打开命令行。<br>输入<code>mysql -uroot -p</code>，出现<code>mysql&gt;</code>则成功进入。<br>2、准备修改密码：<br>输入<code>mysql&gt; use mysql;</code>，出现<code>Database changed</code>则准备成功。<br>3、给 root 用户重置密码：<br>输入<code>mysql&gt; update user set authentication_string=password(&quot;新密码&quot;) where user=&quot;root&quot;;</code>，出现<code>Query OK,1 rows affected(0.01sec)Rows matched:1 Changed:1Warnings: 0</code>则修改成功。<br>4、刷新数据库：<br>输入<code>mysql&gt; flush privileges;</code>，出现<code>QueryOK, 0 rows affected (0.00 sec)</code>则刷新成功。<br>5、退出数据库：<br>输入<code>mysql&gt; quit</code>退出数据库。<br>注释掉 my.ini 里的 skip-grant-tables。<br>完成上面 5 步则成功修改密码。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-07-28T07:11:24.981Z" itemprop="dateUpdated">2019年07月28日 15:11:24</time>
+</span><br>
+
+
+        
+        原文链接：<a href="/2018/mySQL/" target="_blank" rel="external">https://shawdanon.github.io/2018/mySQL/</a>
+        
+    </div>
+    <footer>
+        <a href="https://shawdanon.github.io">
+            <img src="/img/avatar.jpg" alt="鬼厉">
+            鬼厉
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://shawdanon.github.io/2018/mySQL/&title=《MySQL安装》 — 草庙村&pic=https://shawdanon.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shawdanon.github.io/2018/mySQL/&title=《MySQL安装》 — 草庙村&source=mysql 安装总结…" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://shawdanon.github.io/2018/mySQL/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MySQL安装》 — 草庙村&url=https://shawdanon.github.io/2018/mySQL/&via=https://shawdanon.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://shawdanon.github.io/2018/mySQL/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/first-manjaor/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">初探manjaor</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/summary/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">2017总结</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        赞助
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>鬼厉 &copy; 2016 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://shawdanon.github.io/2018/mySQL/&title=《MySQL安装》 — 草庙村&pic=https://shawdanon.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shawdanon.github.io/2018/mySQL/&title=《MySQL安装》 — 草庙村&source=mysql 安装总结…" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://shawdanon.github.io/2018/mySQL/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MySQL安装》 — 草庙村&url=https://shawdanon.github.io/2018/mySQL/&via=https://shawdanon.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://shawdanon.github.io/2018/mySQL/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABzElEQVR42u3aQYrDMAwF0N7/0h2YVWGI+2UpbhmeV4U6yUsWwv7y4xGP5+94/f13/P13Pf91zvDAxcVtc5PbXT3g6pHVawuvhIuLe5BbLV5Xc5J7ru/zxoaLi/tl3OqcdQnDxcX9T9xOUftAIcPFxW1wk83PumCti9de1IKLi/sp7l5gOvv79nwXFxd3qCuxLijJwiXZ8BSejouLe4Tb35DsFaZ8ARStyHBxcW/jJhubcoQRt1IGVlu4uLhD3Lx47YUXs6EqLi7uGW51oZMf3Kwiqh8OFxf3JDdfyiTLlP7BzUJnGBcXd5S7vul9YcfYXg0XF/cGbufB1Wg13yYVPhYuLu4oN39k0iLtLICia3FxcY9w86mdYxnVz1HYq+Hi4t7M7Yens6WqsDXCxcUd5ebl476GSiGUwcXFPc7No4p+tJoXuxYIFxd3i5sscaoN0X4UW0bj4uKOcp/FkYcaCa4cueLi4h7h9k845KB+mxYXF/ckN29mVAOU/EBGIWrBxcU9yK0WmqQd+2iMN7EpLi7u13Cjg5VbzdrCpgsXF/cruXsHKaqv1NqH4eLiDnH3DkbkIWn1hS/puLi4R7idQxJRkDFUNHFxcY9wfwCjic0c48/NCQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.1" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

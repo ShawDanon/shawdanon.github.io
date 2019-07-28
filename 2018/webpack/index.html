@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?887dce1cce44879d8dedd9d9ad97b6d9"></script>
+<!-- End Baidu Tongji -->
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>webpack总结 | 草庙村 | 个人博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="前端">
+    <meta name="description" content="版本：4.16.3使用 webpack 所需要的包：webpack、webpack-cli（此工具用于在命令行中运行 webpack），webpack4 之后将 webpack-cli 从 webpack 中分离的出来。 webpack 基本配置webpack.config.js 12345678910111213141516171819202122232425262728293031323334">
+<meta name="keywords" content="前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack总结">
+<meta property="og:url" content="https://shawdanon.github.io/2018/webpack/index.html">
+<meta property="og:site_name" content="草庙村">
+<meta property="og:description" content="版本：4.16.3使用 webpack 所需要的包：webpack、webpack-cli（此工具用于在命令行中运行 webpack），webpack4 之后将 webpack-cli 从 webpack 中分离的出来。 webpack 基本配置webpack.config.js 12345678910111213141516171819202122232425262728293031323334">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-28T07:14:50.023Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="webpack总结">
+<meta name="twitter:description" content="版本：4.16.3使用 webpack 所需要的包：webpack、webpack-cli（此工具用于在命令行中运行 webpack），webpack4 之后将 webpack-cli 从 webpack 中分离的出来。 webpack 基本配置webpack.config.js 12345678910111213141516171819202122232425262728293031323334">
+    
+        <link rel="alternate" type="application/atom+xml" title="草庙村" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.1">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">鬼厉</h5>
+          <a href="mailto:me@imtxp.cn" title="me@imtxp.cn" class="mail">me@imtxp.cn</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/nav"  >
+                <i class="icon icon-lg icon-folder"></i>
+                常用网址
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/time"  >
+                <i class="icon icon-lg icon-times"></i>
+                倒计时
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/ShawDanon" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">webpack总结</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">webpack总结</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-07-31T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2018年08月01日
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#版本：4-16-3"><span class="post-toc-number">1.</span> <span class="post-toc-text">版本：4.16.3</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#webpack-基本配置"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">webpack 基本配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#source-map"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">source map</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#模块热替换"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">模块热替换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#webpack-设置方法"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">webpack 设置方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#node-设置方法"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">node 设置方法</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-2018/webpack"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">webpack总结</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018年08月01日 00:00:00" datetime="2018-07-31T16:00:00.000Z"  itemprop="datePublished">2018年08月01日</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="版本：4-16-3"><a href="#版本：4-16-3" class="headerlink" title="版本：4.16.3"></a>版本：4.16.3</h2><p>使用 webpack 所需要的包：webpack、webpack-cli（此工具用于在命令行中运行 webpack），webpack4 之后将 webpack-cli 从 webpack 中分离的出来。</p>
+<h3 id="webpack-基本配置"><a href="#webpack-基本配置" class="headerlink" title="webpack 基本配置"></a>webpack 基本配置</h3><p>webpack.config.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>); <span class="comment">//导入node.js的path模块</span></span><br><span class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>); <span class="comment">//导入自动生成HTML插件</span></span><br><span class="line"><span class="keyword">const</span> CleanWebpackPlugin = <span class="built_in">require</span>(<span class="string">'clean-webpack-plugin'</span>); <span class="comment">//导入清理文件夹插件</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   *设置入口，用于设置打包的索引文件。</span></span><br><span class="line"><span class="comment">   *单入口用字符串，多入口用对象。</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  entry: &#123;</span><br><span class="line">    app: <span class="string">'./src/index.js'</span>,</span><br><span class="line">    print: <span class="string">'./src/print.js'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   *设置出口，用于设置打包的位置和文件名。</span></span><br><span class="line"><span class="comment">   *filename表示打包后的文件名。</span></span><br><span class="line"><span class="comment">   *[name]表示入口属性名。</span></span><br><span class="line"><span class="comment">   *path表示打包后存放的路径。</span></span><br><span class="line"><span class="comment">   *path.resolve表示获取绝对位置。</span></span><br><span class="line"><span class="comment">   *__dirname表示当前执行脚本所在的目录。</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: <span class="string">'[name].bundle.js'</span>,</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'./dist'</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   *设置loader，用于对模块的源代码进行转换。</span></span><br><span class="line"><span class="comment">   *用于在 import 或"加载"模块时预处理文件。</span></span><br><span class="line"><span class="comment">   *loader对象放在module对象下的rules数组中。</span></span><br><span class="line"><span class="comment">   *loader对象的test表示匹配什么文件。</span></span><br><span class="line"><span class="comment">   *loader对象的use表示引用什么loader</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">        use: [<span class="string">'style-loader'</span>, <span class="string">'css-loader'</span>]</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   *设置插件，用于处理</span></span><br><span class="line"><span class="comment">   *添加插件需要先导入再实例化。</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> CleanWebpackPlugin([<span class="string">'dist'</span>]), <span class="comment">//用于清理dist文件夹</span></span><br><span class="line">    <span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">      title: <span class="string">'Output Management'</span></span><br><span class="line">    &#125;) <span class="comment">//用于自动生成HTML</span></span><br><span class="line">  ]</span><br><span class="line">&#125;; <span class="comment">//定义配置文件</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = config; <span class="comment">//导出配置文件</span></span><br></pre></td></tr></table></figure>
+<p>运行配置：<br>npx webpack –config webpack.config.js<br>在 package.js 中 script 设置，”build”:“webpack –config webpack.config.js”<br>PS：–config webpack.config.js 用于设置运行文件名，不设置默认运行 webpack.config.js</p>
+<h3 id="source-map"><a href="#source-map" class="headerlink" title="source map"></a>source map</h3><p>webpack.config.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: &#123;</span><br><span class="line">    app: <span class="string">'./src/index.js'</span>,</span><br><span class="line">    print: <span class="string">'./src/print.js'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: <span class="string">'[name].bundle.js'</span>,</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   *用于追踪错误和警告在源代码中的原始位置。</span></span><br><span class="line"><span class="comment">   *不设置：显示打包后的代码。（用于生产环境）</span></span><br><span class="line"><span class="comment">   *inline-source-map：显示原始源代码。</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  devtool: <span class="string">'inline-source-map'</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="模块热替换"><a href="#模块热替换" class="headerlink" title="模块热替换"></a>模块热替换</h3><h4 id="webpack-设置方法"><a href="#webpack-设置方法" class="headerlink" title="webpack 设置方法"></a>webpack 设置方法</h4><p>webpack.config.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: &#123;</span><br><span class="line">    app: <span class="string">'./src/index.js'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   *设置webpack-dev-server，用于提供服务器。</span></span><br><span class="line"><span class="comment">   *contentBase用于设置服务器目录。</span></span><br><span class="line"><span class="comment">   *hot表示是否启用webpack的模块热替换特性。</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  devServer: &#123;</span><br><span class="line">    contentBase: <span class="string">'./dist'</span>,</span><br><span class="line">    hot: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> webpack.NamedModulesPlugin(), <span class="comment">//当开启HMR的时候使用该插件会显示模块的相对路径。</span></span><br><span class="line">    <span class="keyword">new</span> webpack.HotModuleReplacementPlugin() <span class="comment">//模块热替换插件。</span></span><br><span class="line">  ],</span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: <span class="string">'[name].bundle.js'</span>,</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>运行配置：<br>npx webpack-dev-server –open –config webpack.config.js<br>在 package.js 中 script 设置，”start”:“webpack-dev-server –open –config webpack.config.js”<br>PS：–config webpack.config.js 用于设置运行文件名，不设置默认运行 webpack.config.js</p>
+<h4 id="node-设置方法"><a href="#node-设置方法" class="headerlink" title="node 设置方法"></a>node 设置方法</h4><p>dev-server.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> webpackDevServer = <span class="built_in">require</span>(<span class="string">'webpack-dev-server'</span>);</span><br><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> config = <span class="built_in">require</span>(<span class="string">'./webpack.config.js'</span>);</span><br><span class="line"><span class="keyword">const</span> options = &#123;</span><br><span class="line">  contentBase: <span class="string">'./dist'</span>,</span><br><span class="line">  hot: <span class="literal">true</span>,</span><br><span class="line">  host: <span class="string">'localhost'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">webpackDevServer.addDevServerEntrypoints(config, options);</span><br><span class="line"><span class="keyword">const</span> compiler = webpack(config);</span><br><span class="line"><span class="keyword">const</span> server = <span class="keyword">new</span> webpackDevServer(compiler, options);</span><br><span class="line"></span><br><span class="line">server.listen(<span class="number">5000</span>, <span class="string">'localhost'</span>, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'dev server listening on port 5000'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>运行配置：<br>node dev-server.js<br>在 package.js 中 script 设置，”start”:“node dev-server.js”</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-07-28T07:14:50.023Z" itemprop="dateUpdated">2019年07月28日 15:14:50</time>
+</span><br>
+
+
+        
+        原文链接：<a href="/2018/webpack/" target="_blank" rel="external">https://shawdanon.github.io/2018/webpack/</a>
+        
+    </div>
+    <footer>
+        <a href="https://shawdanon.github.io">
+            <img src="/img/avatar.jpg" alt="鬼厉">
+            鬼厉
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://shawdanon.github.io/2018/webpack/&title=《webpack总结》 — 草庙村&pic=https://shawdanon.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shawdanon.github.io/2018/webpack/&title=《webpack总结》 — 草庙村&source=草庙村,个人博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://shawdanon.github.io/2018/webpack/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《webpack总结》 — 草庙村&url=https://shawdanon.github.io/2018/webpack/&via=https://shawdanon.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://shawdanon.github.io/2018/webpack/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/VSCode/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">VSCode</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/node/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Node.js</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        赞助
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>鬼厉 &copy; 2016 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://shawdanon.github.io/2018/webpack/&title=《webpack总结》 — 草庙村&pic=https://shawdanon.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://shawdanon.github.io/2018/webpack/&title=《webpack总结》 — 草庙村&source=草庙村,个人博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://shawdanon.github.io/2018/webpack/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《webpack总结》 — 草庙村&url=https://shawdanon.github.io/2018/webpack/&via=https://shawdanon.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://shawdanon.github.io/2018/webpack/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABw0lEQVR42u3aS4rDQAwFwNz/0hnIamDiHr2WWyRQvTLBscsbod/jUT7P1/n7y+/f19dXT3icOLi4uG3uc3kq3Kv718Sr+6+eiYuLO89dB6890F4Q/MeGi4v7Ydw0QaknPbi4uN/L7XwALi7uN3LTYmad4lSaJsdrNVxc3AY3bZieuD7Y38XFxQ25z/Ck/+28683TcHFxR7hpGVNJTdK2aVoO4eLiznDT8iYtnPr7Fbi4uJPcvZWLzhim3nB58zRcXNwRbiVg1cNZPSSlBVIAwsXFbXMrjYx66ZK2XOsh7DLu4uLiHuD2lzDqixfpkDWY7eDi4o5w99Yj9oYraTqFi4s7w62UIv21jHSF6zL1wcXFHeH2BydpctNpueLi4p7mdlql6VB2M2Dh4uKOc9PWZ7psUSmN4vQIFxf3MPfeBkf6GXGLFhcXd5BbH6t0hq9B73Y9E8bFxR3h1k9a0lQ+Jp724OLiHuamAeVcs6O/+IWLi3svt75aUVmbSLnxshcuLu4gd6/dmaYpN9yDi4v7Ydx1AKoEo70wh4uL+43cOr1SJpU2yHBxcUe4ldffBdobw+Di4k5y04ZpBbE3XsXFxf0A7g8IpAYczA9G1AAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.1" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
